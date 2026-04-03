@@ -19,7 +19,7 @@
   --color-muted: #64748b;
   --color-border: #e2e8f0;
 
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Nunito', system-ui, -apple-system, sans-serif;
 
   --radius-card: 1rem;
 }
@@ -40,11 +40,10 @@
   }
 }
 
-/* Selected state for browser/platform buttons — handles dark mode override
-   since the bg-blue-50 class is toggled by JS and Tailwind dark: can't catch it */
-@layer components {
-  .dark .browser-btn.bg-blue-50,
-  .dark .platform-btn.bg-blue-50 {
-    background-color: rgb(30 58 138 / 0.3);
-  }
+/* Selected state for browser/platform buttons — must be outside @layer so it
+   beats Tailwind's @layer utilities (dark:bg-slate-800, dark:border-slate-700) */
+.dark .browser-btn.bg-blue-50,
+.dark .platform-btn.bg-blue-50 {
+  background-color: rgb(29 78 216 / 0.35);
+  border-color: rgb(147 197 253);
 }

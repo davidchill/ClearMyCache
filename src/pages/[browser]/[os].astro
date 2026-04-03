@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import BrowserIcon from '../../components/BrowserIcon.astro';
+import PlatformIcon from '../../components/PlatformIcon.astro';
 import { VALID_COMBOS, getGuide, getBrowserInfo, getPlatformInfo } from '../../data/guides';
 import type { GetStaticPaths } from 'astro';
 
@@ -44,8 +45,9 @@ const pageDesc = `Step-by-step guide to clear ${guide.browserName} cookies and c
           <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight">
             Clear {guide.browserName} cache
           </h1>
-          <p class="text-slate-400 mt-0.5">
-            {platformInfo.icon} {guide.osName} &nbsp;·&nbsp; {totalSteps} steps
+          <p class="text-slate-400 mt-0.5 flex items-center gap-1.5">
+            <PlatformIcon platform={os} size={18} />
+            {guide.osName} &nbsp;·&nbsp; {totalSteps} steps
           </p>
         </div>
       </div>

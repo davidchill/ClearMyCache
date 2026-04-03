@@ -1,0 +1,19 @@
+---
+interface Props {
+  platform: string;
+  size?: number;
+}
+const { platform, size = 32 } = Astro.props;
+---
+
+{platform === 'windows' && (
+  <img src="/icons/windows.svg" width={size} height={size} alt="Windows" aria-hidden="true" />
+)}
+
+{platform === 'android' && (
+  <img src="/icons/android.svg" width={size} height={size} alt="Android" aria-hidden="true" />
+)}
+
+{(platform === 'macos' || platform === 'iphone' || platform === 'ipad') && (
+  <img src="/icons/apple.svg" width={size} height={size} alt={platform === 'macos' ? 'macOS' : platform === 'iphone' ? 'iPhone' : 'iPad'} aria-hidden="true" class="dark:invert" />
+)}
