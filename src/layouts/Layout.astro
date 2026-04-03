@@ -49,6 +49,15 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://clearmycache.io');
       rel="stylesheet"
     />
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K6YXG29D9B" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K6YXG29D9B');
+    </script>
+
     <!-- Before-paint theme script: prevents flash of wrong theme -->
     <script is:inline>
       (function () {
