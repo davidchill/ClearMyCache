@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: applies dark: variants when <html class="dark"> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-900: #1e3a8a;
+
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+
+  --color-surface: #ffffff;
+  --color-bg: #f8fafc;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --radius-card: 1rem;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: #0f172a;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+/* Selected state for browser/platform buttons — handles dark mode override
+   since the bg-blue-50 class is toggled by JS and Tailwind dark: can't catch it */
+@layer components {
+  .dark .browser-btn.bg-blue-50,
+  .dark .platform-btn.bg-blue-50 {
+    background-color: rgb(30 58 138 / 0.3);
+  }
+}
