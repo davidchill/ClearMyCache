@@ -78,11 +78,11 @@ import { BROWSERS, PLATFORMS, VALID_COMBOS } from '../data/guides';
     <!-- Browser grid (hidden until device is selected) -->
     <div class="mb-6 hidden" id="browser-section">
       <p class="text-[15px] font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-300 mb-3 text-center">Browser</p>
-      <div class="grid gap-2 justify-center [grid-template-columns:repeat(auto-fit,minmax(4.5rem,8rem))]" id="browser-grid" role="group" aria-label="Select your browser">
+      <div class="flex flex-wrap justify-center gap-2" id="browser-grid" role="group" aria-label="Select your browser">
         {BROWSERS.map(b => (
           <button
             data-browser={b.id}
-            class="browser-btn flex flex-col items-center gap-1.5 p-2 sm:p-3 rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950/40 transition-all duration-150 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950"
+            class="browser-btn flex flex-col items-center gap-1.5 p-2 sm:p-3 rounded-2xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950/40 transition-all duration-150 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950 w-[min(8rem,calc(50%-0.25rem))] sm:w-28"
             aria-pressed="false"
           >
             <BrowserIcon browser={b.id} size={28} />
